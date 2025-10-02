@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  system-logic-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: system-logic-service
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    restart: unless-stopped
+    networks:
+      - llm-gateway-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+networks:
+  llm-gateway-network:
+    external: true
+    name: llm-server-app_default
