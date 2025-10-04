@@ -2,6 +2,15 @@
 
 A FastAPI-based middleware service that sits between a Next.js frontend and an LLM Service, providing authentication, request routing, and response handling.
 
+Streaming events can be interefered from here
+
+## Run app
+**Start**
+docker compose up -d --build
+
+**Stop**
+docker compose down -v
+
 ## Architecture
 
 ```

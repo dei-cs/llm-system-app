@@ -3,14 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from config import settings
 import uvicorn
 
-# Create FastAPI application
 app = FastAPI(
     title="System Logic Service API",
     description="Middleware service between Next.js frontend and LLM Service",
     version="1.0.0"
 )
 
-# Configure CORS - Allow all origins
+# Configure CORS - Allow all origins as this is just a prototype
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -20,6 +19,7 @@ app.add_middleware(
 )
 
 
+# Root endpoint
 @app.get("/")
 async def root():
     """Root endpoint - API information."""
@@ -30,6 +30,7 @@ async def root():
     }
 
 
+# Health check endpoint
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""

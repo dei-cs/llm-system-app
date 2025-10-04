@@ -1,8 +1,7 @@
 from pydantic_settings import BaseSettings
 
-
+"""Automatically loads environment variables from a .env file"""
 class Settings(BaseSettings):
-    """Application settings loaded from environment variables."""
     
     # API Keys
     frontend_api_key: str
