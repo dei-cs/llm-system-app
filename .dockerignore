@@ -1,20 +1,19 @@
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
+*.pyc
+*.pyo
+*.pyd
 .Python
 *.egg-info/
-dist/
-build/
+.pytest_cache/
 
-# Virtual Environment
+# Virtual environments
 venv/
+.venv/
 env/
 ENV/
-.venv
 
-# Environment
+# Environment files (unless you need them in container)
 .env
 
 # Git
@@ -25,7 +24,6 @@ ENV/
 .vscode/
 .idea/
 *.swp
-*.swo
 
 # OS
 .DS_Store
@@ -33,17 +31,13 @@ Thumbs.db
 
 # Documentation
 README.md
+*.md
 
-# Docker
-Dockerfile
+# Development files
 docker-compose.yml
+Dockerfile
 .dockerignore
 
 # Logs
 *.log
 logs/
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/

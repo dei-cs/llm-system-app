@@ -1,7 +1,7 @@
 import httpx
 from typing import Dict, Any, Optional, AsyncIterator
 from fastapi import HTTPException, status
-from config import settings
+from .config import settings
 
 
 class LLMServiceClient:

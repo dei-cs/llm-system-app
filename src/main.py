@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from config import settings
+from .config import settings
 import uvicorn
 
 # Create FastAPI application
@@ -40,7 +40,7 @@ async def health_check():
 
 
 # Import and include routers
-from routes import router as api_router
+from .routes import router as api_router
 app.include_router(api_router)
 
 
