@@ -11,3 +11,9 @@ pydantic
 pydantic-settings
 
 requests
+
+mcp
+
+bs4
+
+arxiv
